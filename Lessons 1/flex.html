@@ -1,0 +1,938 @@
+<html>
+<head>
+<title>Test FlexBox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #fff;
+  font-size: 100%;
+  background: url("images/bg.png");
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    color: #1B242F;
+    text-decoration: none;
+}
+time {
+    color: #777;
+    font-size: 0.85em;
+    font-weight: 400;
+}
+img.img-responsive {
+    width: 100%;
+}
+#wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+}
+.projects {
+  display: flex;
+  flex-flow: row wrap;
+}
+.header {
+  display: flex;
+  flex-flow: row wrap;
+}
+.logo {
+      flex: 1 0 69%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+}
+.cell-img {
+    width: 20%;
+    margin: 4em 0 0 8em;
+}
+.cell-bg {
+    width: 52%;
+}
+ul.title {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #393d3c;
+}
+ul.social li {
+    display: inline-block;
+    margin-right: 5px;
+}
+.fb {
+  background: url(images/social.png) 0 0 no-repeat;
+    width: 12px;
+    background-size: cover;
+    height: 22px;
+    display: inline-block;
+}
+.tw {
+  background: url(images/social.png) -27px 0 no-repeat;
+      width: 26px;
+      background-size: cover;
+      height: 22px;
+      display: inline-block;
+}
+.linked {
+  background: url(images/social.png) -58px 0 no-repeat;
+      width: 24px;
+      background-size: cover;
+      height: 22px;
+      display: inline-block;}
+.google {
+  background: url(images/social.png) -94px 0 no-repeat;
+  width: 19px;
+  background-size: cover;
+  height: 22px;
+  display: inline-block;}
+ul.social {
+    padding: 0;
+    list-style: none;
+    margin-top: 3em;
+    text-align: center;
+}
+.menu {
+  background: url(images/menu_bg.jpg) no-repeat center top;
+  background-size: 100% 100%;
+    flex: 1 0 31%;
+}
+.menu-btn {
+    padding-top: 40px;
+    text-align: center;
+}
+.adress {
+    padding-bottom: 2em;
+}
+ul.adr1 {
+      list-style: none;
+      padding: 0;
+      font-size: 12px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 8em 0 0 3em;
+}
+ul.adr2 {
+  list-style: none;
+      padding: 0;
+      font-size: 12px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 4em 0 0 10em;
+}
+
+.horizontal {
+  flex: 2 1 69%;
+  display: flex;
+    flex-flow: row wrap;
+}
+.itemh {
+  flex: auto;
+  min-height: 470px;
+  background-color: #adadad;
+}
+.itemv {
+  flex: auto;
+  min-width: 150px;
+  background-color: #adadad;
+}
+.itemh.start {
+  flex: 1 0 44%;
+  background: url(images/project_bg.jpg) no-repeat center top;
+  padding-top: 10em;
+  background-size: 100% 100%;
+}
+.itemh.fondue {
+  flex: 1 0 56%;
+  background: url(images/fondue.jpg);
+  background-size: 60% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.itemh.louis {
+  flex: 1 0 20%;
+  background: url(images/louis.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.itemh.p22 {
+  flex: 1 0 57%;
+  background: url(images/p22.jpg) no-repeat #eaeaea;
+  background-size: contain;
+  background-position: center;
+}
+.itemh.sesann {
+  flex: 1 0 57%;
+      background: url(images/sessan.jpg) no-repeat #fff;
+      background-size: 100%;
+}
+.itemh.alessi {
+  flex: 1 0 20%;
+  background: url(images/alessi.jpg) no-repeat center top #cecece;
+    padding: 0;
+    background-size: 100%;
+}
+.vertical {
+  flex: 1 1 31%;
+  display: flex;
+  flex-flow: column wrap;
+}
+.itemv.potter {
+  background: url(images/potter1.jpg);
+  background-size: 60% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: #dfe0da;
+}
+.itemv.tabano {
+  background: url(images/tabano.png) no-repeat center top #e9eae2;
+  background-size: contain;
+  padding: 16em 1em 0;
+  min-height: 438px;
+}
+.itemv.fiji {
+  background: url(images/fiji.jpg) no-repeat #fff;
+  background-size: contain;
+  padding: 1em 0 0 14em;
+  height: 236px;
+}
+.itemv.timeline {
+  background: url(images/timeline.jpg) no-repeat center top;
+    padding-top: 1em;
+    background-size: 100% 100%;
+    min-height: 300px;
+}
+
+ul.projects_nav {
+    padding: 0;
+    list-style: none;
+    margin: 0em 0 0 5em;
+    text-transform: uppercase;
+}
+.projects_title {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2.6em;
+    float: right;
+    margin-right: 20px;
+    font-weight: 300;
+}
+h2 {
+  color: #555;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.fondue_inner {
+  float: left;
+  padding: 4em 0 0 4em;
+}
+ul.fundue_list, ul.louis_list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+}
+ul.fundue_list li, ul.caption_left li, ul.fiji_list li, ul.sessan_grid li {
+    font-size: 0.8125em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 500;
+}
+span.put-left {
+    font-weight: 300;
+}
+ul.fundue_list li.view {
+    margin-top: 4.5em;
+}
+ul.fundue_list li.view a {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #555;
+}
+ul.fundue_list li.view img, ul.louis_list li.louis_link img, ul.caption_right li.caption_view img, ul.fiji_list li.fiji_view img, ul.session_view img {
+    margin-right: 0.5em;
+    vertical-align: sub;
+}
+ul.fundue_list li.heart a, ul.louis_list li.heart_louis a, ul.caption_right li.caption_heart a, ul.fiji_list li.fiji_heart a, ul.session_heart a {
+    font-size: 0.85em;
+    font-weight: 300;
+    color: red;
+}
+ul.fundue_list li.heart {
+    margin: 8em 0 0 5em;
+}
+li.potter-left {
+    text-transform: none !important;
+    text-align: justify;
+}
+ul.fundue_list li.potter {
+    margin-top: 1em;
+}
+ul.fundue_list li.p_heart {
+    margin: 0.2em 0 1em 5em
+}
+.potter_inner {
+    padding: 1em 0 0 2.5em;
+    float: left;
+    width: 48%;
+}
+ul.louis_list li {
+    font-size: 0.8125em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+}
+.louis_inner {
+    margin: 3em 2em 0;
+}
+.louis_inner h2 {
+  color: #fff;
+}
+.p22_inner {
+  margin: 3em 0 0 15em;
+}
+ul.louis_list li.louis_link a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+}
+ul.louis_list li.louis_link {
+    margin-top: 2em;
+}
+ul.louis_list li.heart_louis {
+    margin: 2em 0 0 5em;
+}
+ul.caption_left {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+    margin-right: 2em;
+}
+ul.caption_right {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+    margin-top: 1.6em;
+}
+ul.caption_right li.caption_view {
+    text-transform: uppercase;
+}
+ul.caption_right li.caption_view a {
+    font-size: 1em;
+    font-weight: 300;
+    color: #555;
+}
+ul.caption_right li.caption_heart {
+    margin: 1em 0 0 4em;
+}
+.tabano_inner ul.caption_right {
+    margin-top: 0;
+}
+.sesann_inner {
+    margin: 10em 0 0 7em;
+}
+ul.fundue_list.alessi_list li.heart {
+    margin: 1.2em 0 1em 5em;
+}
+.alessi_inner {
+    margin: 5em 0 0 8em;
+}
+.timeline h4 {
+    color: #333333;
+    font-weight: 400;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+ul.timeline_grid {
+    padding: 0;
+    list-style: none;
+}
+ul.timeline_grid li a {
+    font-size: 0.8125em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.timeline_inner {
+  margin: 0em 0 0 4em;
+}
+.studio {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #adadad;
+}
+.std_left {
+    flex: 1 0 31%;
+    background: url(images/studio_left.jpg) no-repeat;
+    padding-top: 5em;
+    background-size: 100% 100%;
+}
+.std_right {
+    flex: 1 0 69%;
+    background: #e9eae2;
+    padding: 5em 9em 5em 4em;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.std_bottom {
+    flex: 1 1 auto;
+    background: #e9eae2;
+    display: flex;
+    align-items: center;
+    padding: 5em 0;
+}
+h2.studio_head {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2.8em;
+  float: left;
+  margin: 4em 0 0 5em;
+}
+.std_right h4 {
+  color: #333;
+      font-size: 1.1em;
+      margin: 0 0 1.4em;
+      font-style: italic;
+      line-height: 1.1em;
+      font-weight: 400;
+}
+.std_right p {
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 5%;
+    line-height: 1.1em;
+    font-weight: 300;
+}
+.col1 {
+    width: 50%;
+    text-align: justify;
+    padding-right: 4em;
+}
+.col2 {
+    width: 50%;
+}
+.middle_lists h5 {
+    color: #333;
+    font-weight: bold;
+    font-size: 0.873em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #C9C9C9;
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+}
+ul.list {
+    float: left;
+    width: 40%;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+ul.list1 {
+    float: right;
+    width: 40%;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+ul.list li, ul.list1 li {
+    color: #333;
+    font-size: 0.7125em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.staff_txt {
+  flex: 1 0 21%;
+  margin: 0 2em 0 5em;
+}
+.staff {
+  flex: 1 0 10%;
+  margin: 1em 5em 0 0;
+}
+.staff_txt h4 {
+    color: #333;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.staff_txt p {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.8em;
+    font-weight: 300;
+    margin-bottom: 1em;
+}
+.staff img.photo {
+  width: 100%;
+}
+.staff h3 {
+    font-size: 0.85em;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 20px 0 0 0;
+}
+.staff p {
+  color: #333;
+      font-size: 0.7125em;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 3px;
+}
+ul.staff_list {
+    padding: 0;
+    list-style: none;
+    margin-top: 1em;
+}
+ul.staff_list li.staff_cv {
+    float: left;
+    color: #fd5000;
+    font-size: 1em;
+}
+ul.staff_list li.staff_cv img {
+    margin-left: 0.3em;
+    vertical-align: sub;
+}
+ul.staff_list li.staff_social {
+    float: right;
+}
+ul.s_social {
+    padding: 0;
+    list-style: none;
+}
+ul.s_social li {
+    display: inline-block;
+}
+ul.s_social li a i {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(images/social_staff.png)no-repeat;
+    background-size: cover;
+}
+ul.s_social li a i.fb1 {
+    background-position: 9px 0;
+}
+ul.s_social li a i.tw1 {
+    background-position: -33px 0;
+}
+ul.s_social li a i.linked1 {
+    background-position: -73px 0;
+}
+ul.s_social li a i.google1 {
+    background-position: -115px 0;
+}
+.news {
+    display: flex;
+    flex-flow: row wrap;
+}
+.news_l {
+    flex: 1 0 31%;
+    background: url(images/news.jpg) no-repeat;
+    padding-top: 5em;
+    background-size: 100% 100%;
+}
+.news_r {
+  flex: 1 0 69%;
+  background-color: #e5e9df;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3em 0 3em 0;
+}
+.news_tab {
+  width: 40%;
+}
+.news_tab h3 {
+  color: #333;
+      font-size: 1.2em;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-transform: uppercase;
+      line-height: 1.1em;
+      font-weight: 800;
+}
+.news_tab p {
+    color: #333;
+    font-size: 0.9em;
+    margin-bottom: 5%;
+    line-height: 1.1em;
+    font-weight: 300;
+}
+.btn1 {
+    display: inline-block;
+    color: #fd5000;
+    font-size: 0.85em;
+    float: right;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 520px;
+}
+.footer_l {
+  background: url(images/map.jpg) no-repeat;
+  background-size: 100% 100%;
+    flex: 1 0 50%;
+}
+.footer_r {
+    flex: 1 0 50%;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer_r .cell-img {
+  margin: 0;
+}
+.footer_r .adress {
+    align-self: flex-start;
+    margin-top: 6em;
+}
+.footer_r ul.adr1 {
+  margin: 0;
+}
+.footer_r ul.adr1 li {
+  color: #333;
+}
+.footer_r ul.adr2 {
+  margin: 2em 0;
+}
+.footer_r ul.adr2 li {
+  color: #333;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+  <div class="header">
+    <div class="logo">
+          <div class="cell-img">
+            <a href><img class="img-responsive" src="images/DSGN.png"></a>
+            <ul class="title">
+              <li>ASSOCIATES </li>
+              <li>STUDIO</li>
+              <li>DESIGN</li>
+            </ul>
+            <ul class="social">
+              <li><a href=""><i class="fb"></i></a></li>
+              <li><a href=""><i class="tw"></i></a></li>
+              <li><a href=""><i class="linked"></i></a></li>
+              <li><a href=""><i class="google"></i></a></li>
+            </ul>
+          </div>
+          <div class="cell-bg">
+            <img class="img-responsive" src="images/img.png">
+          </div>
+    </div>
+    <div class="menu">
+      <div class="menu-btn">
+        <a href=""><img src="images/nav.png"></a>
+      </div>
+      <div class="adress">
+        <ul class="adr1">
+          <li>90802 California</li>
+          <li>Long beach</li>
+          <li>PO Box 68789</li>
+          <li>300 East Ocean</li>
+          <li>Boulevard</li>
+        </ul>
+        <ul class="adr2">
+          <li>+64 9 345 6758</li>
+          <li>info@dsgn-studio.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="projects">
+    <div class="row horizontal">
+      <div class="itemh start">
+        <ul class="projects_nav">
+          <li>All</li>
+          <li>House</li>
+          <li>Commercial</li>
+          <li>Personal</li>
+          <li>Studio Lab</li>
+        </ul>
+        <h1 class="projects_title">Projects</h1>
+      </div>
+      <div class="itemh fondue">
+        <div class="fondue_inner">
+          <h2>Fondue</h2>
+          <ul class="fundue_list">
+            <li>Project Assistant : <span class="put-left">Francesco Dompieri</span></li>
+            <li>Material : <span class="put-left">Glass and Metal</span></li>
+            <li>Typology : <span class="put-left">Suspension lamp</span></li>
+            <li>Client : <span class="put-left">David Design</span></li>
+            <li>Year : <span class="put-left">2014</span></li>
+            <li class="view"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+            <li class="heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemh louis">
+        <div class="louis_inner">
+          <h2>louis xx</h2>
+          <ul class="louis_list">
+            <li>designer: <span class="put-left">philippe starck</span></li>
+            <li>ypology: <span class="put-left">chairs</span></li>
+            <li>Client: <span class="put-left">vitra</span></li>
+            <li>Year: <span class="put-left">2012</span></li>
+            <li class="louis_link"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+            <li class="heart_louis"><a href="#"><img src="images/w_heart.png" alt=""><br>+200</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemh p22">
+        <div class="p22_inner">
+          <ul class="caption_left">
+            <h2>259-875-p23</h2>
+     			    <li>Typology : <span class="put-left">mazim placerat</span></li>
+     			  	<li>Client : <span class="put-left">mazim placerat</span></li>
+     			  	<li>Year : <span class="put-left">2014</span></li>
+     			   </ul>
+             <ul class="caption_right">
+      			   <li class="caption_view"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+      			   <li class="caption_heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+      			  </ul>
+        </div>
+      </div>
+      <div class="itemh sesann">
+        <div class="sesann_inner">
+          <ul class="caption_left">
+            <h2>Sesann</h2>
+              <li>designer : <span class="put-left">Gianfranco Frattini</span></li>
+     			    <li>Typology : <span class="put-left">armchairs</span></li>
+     			  	<li>Client : <span class="put-left">cassina</span></li>
+     			  	<li>Year : <span class="put-left">1970</span></li>
+     			   </ul>
+             <ul class="caption_right">
+      			   <li class="caption_view"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+      			   <li class="caption_heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+      			  </ul>
+        </div>
+      </div>
+      <div class="itemh alessi">
+        <div class="alessi_inner">
+          <h2>Alessi</h2>
+          <ul class="fundue_list alessi_list">
+            <li>designer: <span class="put-left">Piero Lissoni</span></li>
+            <li>Client: <span class="put-left">Alessi</span></li>
+            <li>Year: <span class="put-left">2013</span></li>
+            <li class="view potter"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+            <li class="heart p_heart"><a href="#"><img src="images/w_heart.png" alt=""><br>+200</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row vertical">
+      <div class="itemv potter">
+        <div class="potter_inner">
+          <h2>Potter</h2>
+          <ul class="fundue_list">
+            <li>For Stelton</li>
+            <li class="potter-left">Potter focuses on the functionality and process of preparing tea. a big sieve allows the flavor of to evenly brewed. </li>
+            <li class="view potter"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+            <li class="heart p_heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemv tabano">
+          <div class="tabano_inner">
+            <h2>tabano</h2>
+            <ul class="caption_left">
+                <li>DESIGNER: <span class="put-left">PATRICIA URQUIOLA</span></li>
+                <li>Typology: <span class="put-left">Armchairs</span></li>
+                <li>Client: <span class="put-left">B&B ITALIA</span></li>
+                <li>Year: <span class="put-left">2014</span></li>
+               </ul>
+               <ul class="caption_right">
+                 <li class="caption_view"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+                 <li class="caption_heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="itemv fiji">
+        <div class="fiji_inner">
+          <h2>FIJI</h2>
+          <ul class="fundue_list">
+            <li>DESIGNER: <span class="put-left">Cuno Frommherz</span></li>
+            <li>Typology: <span class="put-left">Armchairs</span></li>
+            <li>Year: <span class="put-left">2012</span></li>
+            <li class="view potter"> <a class="popup-with-zoom-anim" href="#"><img src="images/arrow.png" alt="">View Project</a></li>
+            <li class="heart p_heart"><a href="#"><img src="images/heart.png" alt=""><br>+200</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemv timeline">
+        <div class="timeline_inner">
+          <h4>Timeline</h4>
+          <ul class="timeline_grid">
+            <li><a href="#">2014</a></li>
+            <li><a href="#">2013</a></li>
+            <li><a href="#">2012</a></li>
+            <li><a href="#">2011</a></li>
+            <li><a href="#">2010</a></li>
+          </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="studio">
+    <div class="std_left">
+      <h2 class="studio_head">Studio</h2>
+    </div>
+    <div class="std_right">
+      <div class="col1">
+        	 	   <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin eros sit amet nulla rhoncus dictum. </h4>
+        	 	   <h4>Nam rhoncus fringilla dolor vitae vulputate. Nullam quis eros lorem. Integer cursus erat a orci congue feugiat. Cras rhoncus mollis libero, id aliquet purus varius sed.</h4>
+        	 	   <p>Aenean ullamcorper porta nisl, ac lobortis elit commodo placerat. </p>
+        	 	   <p>Vivamus eget laoreet enim. Sed nunc dui, egestas vel diam convallis, faucibus iaculis sapien. Sed ut vulputate nisi. </p>
+        	 	   <p>Proin tempor risus tellus. Maecenas sit amet fringilla urna, vel iaculis velit. Sed ac felis et sem mollis dictum sed id orci.</p>
+      </div>
+      <div class="col2">
+	 		<img src="images/pic1.jpg" alt="image" class="img-responsive">
+	 	    <div class="middle_lists">
+	 	    	<h5>Awards</h5>
+					<ul class="list">
+					   <li>Aenean ullamcorper porta nisl,</li>
+					   <li>ac lobortis elit</li>
+					   <li>commodo placerat.</li>
+					   <li>Vivamus</li>
+					</ul>
+				  <ul class="list1">
+            <li>Aenean ullamcorper porta nisl,</li>
+            <li>ac lobortis elit</li>
+            <li>commodo placerat.</li>
+            <li>Vivamus</li>
+
+			    </ul>
+			</div>
+      </div>
+    </div>
+    <div class="std_bottom">
+      <div class="staff_txt">
+        <h4>Staff.</h4>
+        <p>Sit amet laoreet sapien dictum. Sed eget eros augue. Pellentesque tempor mi sit amet nisi tincidunt tincidunt. Fusce malesuada lectus sed mauris pharetra faucibus. </p>
+        <p>Aenean diam tortor, hendrerit ac pulvinar vel, condimentum ac velit. Phasellus eu odio elit. Aenean volutpat mi quam, ut ornare augue tempus ut.</p>
+        <p>Morbi sagittis diam mauris, in adipiscing nulla convallis ut.</p>
+      </div>
+      <div class="staff">
+        <img src="images/Philippe.jpg" alt="image" class="img-responsive photo">
+        <h3><a href="#">lectores legere</a></h3>
+        <p>Designer</p>
+          <ul class="staff_list">
+          		<li class="staff_cv">CV<img src="images/s_arrow.png" alt=""></li>
+              <li class="staff_social">
+              	<ul class="s_social">
+        					<li><a href=""> <i class="fb1"> </i> </a></li>
+        					<li><a href=""><i class="tw1"> </i> </a></li>
+        					<li><a href=""><i class="linked1"> </i> </a></li>
+        					<li><a href=""><i class="google1"> </i> </a></li>
+        		 		</ul>
+              </li>
+         </ul>
+      </div>
+      <div class="staff">
+        <img src="images/mario.jpg" alt="image" class="img-responsive photo">
+        <h3><a href="#">mario bellini</a></h3>
+        <p>Designer</p>
+          <ul class="staff_list">
+          		<li class="staff_cv">CV<img src="images/s_arrow.png" alt=""></li>
+              <li class="staff_social">
+              	<ul class="s_social">
+        					<li><a href=""> <i class="fb1"> </i> </a></li>
+        					<li><a href=""><i class="tw1"> </i> </a></li>
+        					<li><a href=""><i class="linked1"> </i> </a></li>
+        					<li><a href=""><i class="google1"> </i> </a></li>
+        		 		</ul>
+              </li>
+         </ul>
+      </div>
+      <div class="staff">
+        <img src="images/patricia.jpg" alt="image" class="img-responsive photo">
+        <h3><a href="#">patricia urquiola</a></h3>
+        <p>Designer</p>
+          <ul class="staff_list">
+          		<li class="staff_cv">CV<img src="images/s_arrow.png" alt=""></li>
+              <li class="staff_social">
+              	<ul class="s_social">
+        					<li><a href=""> <i class="fb1"> </i> </a></li>
+        					<li><a href=""><i class="tw1"> </i> </a></li>
+        					<li><a href=""><i class="linked1"> </i> </a></li>
+        					<li><a href=""><i class="google1"> </i> </a></li>
+        		 		</ul>
+              </li>
+         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="news">
+    <div class="news_l">
+      <h2 class="studio_head">News</h2>
+    </div>
+    <div class="news_r">
+      <div class="news_tab">
+        <h3><a href="#">Mauris et dui sed justo placerat tristique.</a></h3>
+        <p class="date"><time datetime="2014-01-01" title="date">14.08.2014</time></p>
+        <img src="images/n1.jpg" alt="image" class="img-responsive zoom-img">
+        <p>Maecenas imperdiet nisi lorem, sed fermentum tortor pretium eget. Sed mollis lacus quis nunc cursus cursus. Quisque et magna sit amet sapien fermentum scelerisque eu id massa. Mauris ornare massa vel mauris tempus, vitae tempus urna tincidunt.</p>
+        <a href="#" class="btn1">read more</a>
+      </div>
+      <div class="news_tab">
+        <h3><a href="#">Proin vehicula nibh massa massa nibh</a></h3>
+        <p class="date"><time datetime="2014-01-01" title="date">14.08.2014</time></p>
+        <div class="mask1"><img src="images/n2.jpg" alt="image" class="img-responsive zoom-img"></div>
+        <p>Praesent non mauris nec orci scelerisque faucibus. Nulla ac varius est. Aenean auctor nisl elit, nec sollicitudin lectus iaculis sed. Maecenas aliquam ligula vitae pharetra scelerisque.</p>
+        <a href="#" class="btn1">read more</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_l"></div>
+    <div class="footer_r">
+      <div class="cell-img">
+        <a href="/"><img class="img-responsive" src="images/DSGN.png"></a>
+        <ul class="title">
+          <li>ASSOCIATES </li>
+          <li>STUDIO</li>
+          <li>DESIGN</li>
+        </ul>
+        <ul class="social">
+          <li><a href=""><i class="fb"></i></a></li>
+          <li><a href=""><i class="tw"></i></a></li>
+          <li><a href=""><i class="linked"></i></a></li>
+          <li><a href=""><i class="google"></i></a></li>
+        </ul>
+      </div>
+      <div class="adress">
+        <ul class="adr1">
+          <li>90802 California</li>
+          <li>Long beach</li>
+          <li>PO Box 68789</li>
+          <li>300 East Ocean</li>
+          <li>Boulevard</li>
+        </ul>
+        <ul class="adr2">
+          <li>+64 9 345 6758</li>
+          <li>info@dsgn-studio.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
