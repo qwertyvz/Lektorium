@@ -355,6 +355,7 @@ ul.fundue_list.alessi_list li.heart {
 }
 ul.timeline_grid {
     padding: 0;
+    margin: 0;
     list-style: none;
 }
 ul.timeline_grid li a {
@@ -365,6 +366,9 @@ ul.timeline_grid li a {
 }
 .timeline_inner {
   margin: 0em 0 0 4em;
+}
+.timeline_inner h4 {
+  margin-bottom: 0;
 }
 .studio {
     display: flex;
@@ -586,9 +590,13 @@ ul.s_social li a i.google1 {
     min-height: 520px;
 }
 .footer_l {
-  background: url(images/map.jpg) no-repeat;
-  background-size: 100% 100%;
     flex: 1 0 50%;
+    position: relative;
+}
+.pin {
+  position: absolute;
+  top: 43%;
+  right: 57%;
 }
 .footer_r {
     flex: 1 0 50%;
@@ -906,7 +914,8 @@ ul.s_social li a i.google1 {
   </div>
   <div class="footer">
     <div class="footer_l">
-      <img src="">
+      <img src="images/map.jpg" class="img-responsive">
+      <img  class="pin" src="images/PIN_1.png">
     </div>
     <div class="footer_r">
       <div class="cell-img">
