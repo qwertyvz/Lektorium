@@ -3,12 +3,13 @@
 <title>Test FlexBox</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
   color: #fff;
-  font-size: 100%;
+  font-size: 21px;
   background: url("images/bg.png");
 }
 * {
@@ -111,7 +112,7 @@ ul.social {
 ul.adr1 {
       list-style: none;
       padding: 0;
-      font-size: 12px;
+      font-size: 0.8em;
       color: #fff;
       text-transform: uppercase;
       margin: 8em 0 0 3em;
@@ -119,7 +120,7 @@ ul.adr1 {
 ul.adr2 {
   list-style: none;
       padding: 0;
-      font-size: 12px;
+      font-size: 0.8em;
       color: #fff;
       text-transform: uppercase;
       margin: 4em 0 0 10em;
@@ -160,11 +161,13 @@ ul.adr2 {
   background-size: 100% 100%;
 }
 .itemh.p22 {
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding: 1em 2em 0 0;
   flex: 1 0 57%;
   background: url(images/p22.jpg) no-repeat #eaeaea;
-  background-size: contain;
   background-position: center;
-}
+  display: flex;}
 .itemh.sesann {
   flex: 1 0 57%;
       background: url(images/sessan.jpg) no-repeat #fff;
@@ -192,13 +195,11 @@ ul.adr2 {
   background: url(images/tabano.png) no-repeat center top #e9eae2;
   background-size: contain;
   padding: 16em 1em 0;
-  min-height: 438px;
 }
 .itemv.fiji {
   background: url(images/fiji.jpg) no-repeat #fff;
   background-size: contain;
   padding: 1em 0 0 14em;
-  height: 236px;
 }
 .itemv.timeline {
   background: url(images/timeline.jpg) no-repeat center top;
@@ -241,7 +242,7 @@ ul.fundue_list li, ul.caption_left li, ul.fiji_list li, ul.sessan_grid li {
     font-size: 0.8125em;
     text-transform: uppercase;
     color: #555;
-    font-weight: 500;
+    font-weight: 600;
 }
 span.put-left {
     font-weight: 300;
@@ -269,6 +270,7 @@ ul.fundue_list li.heart {
 li.potter-left {
     text-transform: none !important;
     text-align: justify;
+    font-weight: 400 !important;
 }
 ul.fundue_list li.potter {
     margin-top: 1em;
@@ -285,7 +287,7 @@ ul.louis_list li {
     font-size: 0.8125em;
     text-transform: uppercase;
     color: #fff;
-    font-weight: 400;
+    font-weight: 600;
 }
 .louis_inner {
     margin: 3em 2em 0;
@@ -294,7 +296,7 @@ ul.louis_list li {
   color: #fff;
 }
 .p22_inner {
-  margin: 3em 0 0 15em;
+  flex: 0 1 53%;
 }
 ul.louis_list li.louis_link a {
     font-size: 1.3em;
@@ -614,6 +616,7 @@ ul.s_social li a i.google1 {
 .footer_r ul.adr2 li {
   color: #333;
 }
+
 </style>
 </head>
 <body>
@@ -902,7 +905,9 @@ ul.s_social li a i.google1 {
     </div>
   </div>
   <div class="footer">
-    <div class="footer_l"></div>
+    <div class="footer_l">
+      <img src="">
+    </div>
     <div class="footer_r">
       <div class="cell-img">
         <a href="/"><img class="img-responsive" src="images/DSGN.png"></a>
