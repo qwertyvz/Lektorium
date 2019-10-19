@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Lessons 2  - Task 4</title>
+  <script src="task4.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="field">
+    <img src="https://js.cx/clipart/ball.svg" width="40" height="40" id="ball">
+    <div id="box"></div>
+  </div>
+<script>
+ball.onclick = function() {
+
+  let height = field.clientHeight - ball.clientHeight;
+  let width = 600;
+
+  animate({
+    duration: 2000,
+    timing: makeEaseOut(bounce),
+    draw: function(progress) {
+      ball.style.top = height * progress + 'px'
+    }
+  });
+
+  animate({
+    duration: 2000,
+    timing: makeEaseOut(quad),
+    draw: function(progress) {
+      ball.style.left = width * progress + "px"
+    }
+  });
+}
+</script>
+</body>
+</html>

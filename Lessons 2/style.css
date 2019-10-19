@@ -1,0 +1,26 @@
+#field {
+  height: 350px;
+  border-bottom: 3px black groove;
+  position: relative;
+}
+
+#box {
+    display: block;
+    width: 330px;
+    height: 100px;
+    z-index: 99;
+    background-color: #333;
+    position: absolute;
+    top: 250px;
+    left: 320px;
+}
+
+#ball {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #26e526;
+    border-radius: 30px;
+}
