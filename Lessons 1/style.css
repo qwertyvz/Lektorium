@@ -152,13 +152,13 @@ ul.adr2 {
   padding: 0 0 11em;
 }
 .itemh.p22 {
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  padding: 1em 2em 0 0;
-  flex: 1 0 57%;
-  background: url(images/p22.jpg) no-repeat #eaeaea;
-  background-position: center;
-  display: flex;}
+  padding: 2em 3em 0 0em;
+      flex: 1 0 57%;
+      background: url(images/p22.jpg) no-repeat #eaeaea;
+      background-position: center;
+      display: flex;
+      flex-flow: column wrap;
+}
 .itemh.sesann {
   flex: 1 0 57%;
       background: url(images/sessan.jpg) no-repeat #fff;
@@ -192,6 +192,10 @@ ul.adr2 {
   background-size: contain;
   padding: 16em 1em 0;
 }
+.tabano_inner {
+  display: flex;
+  flex-flow: row wrap;
+}
 .itemv.fiji {
   background: url(images/fiji.jpg) no-repeat #fff;
   background-size: contain;
@@ -213,7 +217,7 @@ ul.projects_nav {
     text-transform: uppercase;
     color: #fff;
     font-size: 2.6em;
-    float: right;
+    text-align: right;
     margin-right: 20px;
     font-weight: 300;
 }
@@ -224,14 +228,12 @@ h2 {
     font-weight: 300;
 }
 .fondue_inner {
-  float: left;
   padding: 4em 0 0 4em;
 }
 ul.fundue_list, ul.louis_list {
     padding: 0;
     margin: 0;
     list-style: none;
-    float: left;
 }
 ul.fundue_list li, ul.caption_left li, ul.fiji_list li, ul.sessan_grid li {
     font-size: 0.8125em;
@@ -275,7 +277,6 @@ ul.fundue_list li.p_heart {
 }
 .potter_inner {
     padding: 1em 0 0 2.5em;
-    float: left;
     width: 48%;
 }
 ul.louis_list li {
@@ -291,7 +292,18 @@ ul.louis_list li {
   color: #fff;
 }
 .p22_inner {
-  flex: 0 1 58%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 63%;
+  align-self: flex-end;
+}
+.p22_inner h2, .tabano_inner h2, .sesann_inner h2 {
+    flex: 1 1 100%;
+}
+.sesann_inner {
+    display: flex;
+    flex-flow: row wrap;
 }
 ul.louis_list li.louis_link a {
     font-size: 1.3em;
@@ -309,15 +321,12 @@ ul.caption_left {
     padding: 0;
     margin: 0;
     list-style: none;
-    float: left;
     margin-right: 2em;
 }
 ul.caption_right {
     padding: 0;
     margin: 0;
     list-style: none;
-    float: left;
-    margin-top: 1.6em;
 }
 ul.caption_right li.caption_view {
     text-transform: uppercase;
@@ -395,7 +404,6 @@ h2.studio_head {
   text-transform: uppercase;
   color: #fff;
   font-size: 2.8em;
-  float: left;
   margin: 4em 0 0 5em;
 }
 .std_right h4 {
@@ -421,6 +429,11 @@ h2.studio_head {
 .col2 {
     width: 50%;
 }
+.middle_lists {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
 .middle_lists h5 {
     color: #333;
     font-weight: bold;
@@ -429,17 +442,16 @@ h2.studio_head {
     border-bottom: 1px solid #C9C9C9;
     margin-bottom: 7px;
     padding-bottom: 10px;
+    flex: 1 1 100%;
 }
 ul.list {
-    float: left;
-    width: 40%;
+    width: 35%;
     padding: 0;
     list-style: none;
     text-align: left;
 }
 ul.list1 {
-    float: right;
-    width: 40%;
+    width: 35%;
     padding: 0;
     list-style: none;
     text-align: left;
@@ -493,18 +505,17 @@ ul.staff_list {
     padding: 0;
     list-style: none;
     margin-top: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 ul.staff_list li.staff_cv {
-    float: left;
     color: #fd5000;
     font-size: 1em;
 }
 ul.staff_list li.staff_cv img {
     margin-left: 0.3em;
     vertical-align: sub;
-}
-ul.staff_list li.staff_social {
-    float: right;
 }
 ul.s_social {
     padding: 0;
@@ -622,12 +633,16 @@ ul.s_social li a i.google1 {
   .itemh.louis {
     flex: 1 0 16%;
   }
+  .p22_inner{
+    width: 53%;
+  }
   .itemv.fiji {
     padding: 1em 0 0 17em;
   }
   .itemv.tabano {
     padding: 20em 5em 0;
   }
+
   .alessi_inner {
     margin: 5em 0 0 12em;
   }
@@ -656,6 +671,7 @@ ul.s_social li a i.google1 {
 @media (max-width: 750px) {
   .itemh.p22 {
     background-position: -100px;
+    padding: 2em 0 0;
   }
   .footer {
     flex-flow: column nowrap;
@@ -664,7 +680,7 @@ ul.s_social li a i.google1 {
     margin-top: 30px;
   }
   .itemv.tabano {
-    padding: 25em 1em 0;
+        padding: 25em 0 2em 1em;
   }
   .staff_txt {
     flex: 1 1 auto;
@@ -703,5 +719,10 @@ ul.s_social li a i.google1 {
 @media (max-width: 850px) {
   .itemv.fiji {
     padding: 1em 0 0 13em;
+  }
+}
+@media (max-width: 550px) {
+  .itemv.tabano {
+      padding: 18em 1em 2em 4em;
   }
 }
