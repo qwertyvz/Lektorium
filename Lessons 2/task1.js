@@ -10,42 +10,36 @@ let arr = [NaN,undefined,1,3,5,{a: 1, b: 2}, "fdffsf"];
 console.log("Arr: " + arr);
 console.log(objReturn(arr));
 
+function arrFilter(arr) {
+  return arr.filter(item => typeof(item) === "number" && !isNaN(item));
+}
+
 function arrMin(arr) {
-  return arr.filter(item => typeof(item) === "number" && !isNaN(item)).reduce((min, current) => {return (min < current ? min : current)});
+  return arrFilter(arr).reduce((min, current) => {return (min < current ? min : current)});
 }
 
 function arrMax(arr) {
-  return arr.filter(item => typeof(item) === "number" && !isNaN(item)).reduce((max, current) => {return (max > current ? max : current)});
+  return arrFilter(arr).reduce((max, current) => {return (max > current ? max : current)});
 }
 
 function arrSum(arr) {
-  return arr.filter(item => typeof(item) === "number" && !isNaN(item)).reduce((sum, current) => sum + current, 0);
+  return arrFilter(arr).reduce((sum, current) => sum + current, 0);
 }
 
 function objReturn(arr) {
   let arrObj = {
-    sum: 0,
-    min: 0,
-    max: 0,
+    sum: arrSum(arr),
+    min: arrMin(arr),
+    max: arrMax(arr),
     newArr: []
   },
-  min = 0,
-  max = 0,
-  sum = 0,
   minIndex = 0,
   maxIndex = 0;
 
-  sum = arrSum(arr);
-  min = arrMin(arr);
-  max = arrMax(arr);
-
-  minIndex = arr.indexOf(min);
-  maxIndex = arr.indexOf(max);
-  arr.splice(minIndex,1,max);
-  arr.splice(maxIndex,1,min);
-  arrObj.sum = sum;
-  arrObj.min = min;
-  arrObj.max = max;
+  minIndex = arr.indexOf(arrObj.min);
+  maxIndex = arr.indexOf(arrObj.max);
+  arr.splice(minIndex,1,arrObj.max);
+  arr.splice(maxIndex,1,arrObj.min);
   arrObj.newArr = arr;
 
   return arrObj;
