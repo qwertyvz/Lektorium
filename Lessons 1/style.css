@@ -559,11 +559,13 @@ ul.s_social li a i.google1 {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   padding: 3em 0 3em 0;
 }
 .news_tab {
   width: 40%;
+  display: flex;
+  flex-flow: column wrap;
 }
 .news_tab h3 {
   color: #333;
@@ -573,6 +575,7 @@ ul.s_social li a i.google1 {
       text-transform: uppercase;
       line-height: 1.1em;
       font-weight: 800;
+      min-height: 44px;
 }
 .news_tab p {
     color: #333;
@@ -582,10 +585,9 @@ ul.s_social li a i.google1 {
     font-weight: 300;
 }
 .btn1 {
-    display: inline-block;
     color: #fd5000;
     font-size: 0.85em;
-    float: right;
+    align-self: flex-end;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 10px;
