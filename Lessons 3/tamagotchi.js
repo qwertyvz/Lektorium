@@ -101,13 +101,13 @@ class Tamagotchi {
   }
 
   isDead() {
-    if (this._foodLevel === 0 || this._waterLevel === 0 || this._sleepLevel === 0)
+    if (this._foodLevel <= 0 || this._waterLevel <= 0 || this._sleepLevel <= 0)
       this._isDead = true;
     return this._isDead;
   }
 
   isRanAway() {
-    if (this._happinessLevel === 0)
+    if (this._happinessLevel <= 0)
       this._isRanAway = true;
     return this._isRanAway;
   }
@@ -174,14 +174,15 @@ class Tamagotchi {
 }
 
 let tamagotchi = new Tamagotchi("Desti");
+let intervalID;
+
 console.log("Our new baby " + tamagotchi.getName() + " was born!");
+console.log("Use tamagotchi.feed(), tamagotchi.drink(), tamagotchi.sleep(), tamagotchi.play() methods to play.");
 tamagotchi.setDifficulty(1500);
 tamagotchi.hungerDrain();
 tamagotchi.waterDrain();
 tamagotchi.sleepDrain();
 tamagotchi.playDrain();
-
-let intervalID;
 
 intervalID = setInterval(function () {
   if(!tamagotchi.isDead() && !tamagotchi.isRanAway()) {
