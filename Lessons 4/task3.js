@@ -25,8 +25,7 @@ Array.prototype.mySort = function (fn) {
     let right = [];
 
     for (let element of arr) {
-      fn(element, pivot);
-      if (element > pivot) right.push(element);
+      if (fn(element, pivot)) right.push(element);
       else if (element < pivot) left.push(element);
       else equal.push(element);
     }
@@ -39,7 +38,7 @@ Array.prototype.mySort = function (fn) {
 }
 
 let arr3 = [2,5,3,6,1,4];
-console.log(arr3.mySort((a,b)=>console.log(a + " <> " + b)));
+console.log(arr3.mySort((a,b)=>{console.log(a + " <> " + b); return a < b}));
 
 //myForEach
 let arr = [1,2,3,4,5];
