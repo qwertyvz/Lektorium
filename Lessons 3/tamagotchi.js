@@ -97,7 +97,7 @@ class Tamagotchi {
   //check state methods
 
   showStats() {
-    console.log("Food: " + this._foodLevel + " Water: " + this._waterLevel + " Rest: " + this._sleepLevel + " Happiness: " + this._happinessLevel);
+    return "Food: " + this._foodLevel + " Water: " + this._waterLevel + " Rest: " + this._sleepLevel + " Happiness: " + this._happinessLevel;
   }
 
   isDead() {
@@ -146,60 +146,59 @@ class Tamagotchi {
 
   hungerDrain()
   {
-    setInterval(() =>
-    {this._foodLevel-=4;
-    }, this._difficulty);
+    this._foodLevel-=4;
   }
 
   waterDrain()
   {
-    setInterval(() =>
-    {this._waterLevel-=3;
-    }, this._difficulty);
+    this._waterLevel-=3;
   }
 
   sleepDrain()
   {
-    setInterval(() =>
-    {this._sleepLevel-=2;
-    }, this._difficulty);
+	this._sleepLevel-=2;
   }
 
   playDrain()
   {
-    setInterval(() =>
-    {this._happinessLevel-=3;
-    }, this._difficulty);
+	this._happinessLevel-=3;
   }
 }
 
 let tamagotchi = new Tamagotchi("Desti");
 let intervalID;
+let statHolder = document.getElementById("stats"),
+	infoHolder = document.getElementById("info"),
+	warningHolder = document.getElementById("warn");
 
-console.log("Our new baby " + tamagotchi.getName() + " was born!");
-console.log("Use tamagotchi.feed(), tamagotchi.drink(), tamagotchi.sleep(), tamagotchi.play() methods to play.");
+infoHolder.innerHTML = "Our new baby " + tamagotchi.getName() + " was born!";
+statHolder.innerHTML = tamagotchi.showStats();
 tamagotchi.setDifficulty(1500);
-tamagotchi.hungerDrain();
-tamagotchi.waterDrain();
-tamagotchi.sleepDrain();
-tamagotchi.playDrain();
+
 
 intervalID = setInterval(function () {
   if(!tamagotchi.isDead() && !tamagotchi.isRanAway()) {
-    tamagotchi.showStats();
+	statHolder.innerHTML = tamagotchi.showStats();
+    tamagotchi.hungerDrain();
+	tamagotchi.waterDrain();
+	tamagotchi.sleepDrain();
+	tamagotchi.playDrain();
     if (tamagotchi.foodLevelWarning())
-      console.log("Feed me! Food: " + tamagotchi.getFoodLevel() + " use .feed()");
-    if (tamagotchi.waterLevelWarning())
-      console.log("I want to drink! Water: " + tamagotchi.getWaterLevel() + " use .drink()");
-    if (tamagotchi.sleepLevelWarning())
-      console.log("I need rest! Sleep: " + tamagotchi.getSleepLevel() + " use .sleep()");
-    if (tamagotchi.happinessLevelWarning())
-      console.log("I want to play! Happiness: " + tamagotchi.getHappinessLevel() + " use .play()");
+      warningHolder.innerHTML = "Feed me!";
+    else if (tamagotchi.waterLevelWarning())
+      warningHolder.innerHTML = "I want to drink!";
+    else if (tamagotchi.sleepLevelWarning())
+      warningHolder.innerHTML = "I need rest!";
+    else if (tamagotchi.happinessLevelWarning())
+      warningHolder.innerHTML = "I want to play!";
+	else
+		warningHolder.innerHTML = "";
   } else {
+	statHolder.innerHTML = tamagotchi.showStats();
     if (tamagotchi.getIsDead())
-      console.log(tamagotchi.getName() + " has died.")
+      warningHolder.innerHTML = tamagotchi.getName() + " has died.";
     else
-      console.log(tamagotchi.getName() + " ran away.")
+warningHolder.innerHTML = tamagotchi.getName() + " ran away.";
     clearInterval(intervalID);
   }
 }, tamagotchi.getDifficulty());
