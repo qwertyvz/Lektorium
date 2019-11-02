@@ -13,7 +13,7 @@ Array.prototype.myMap = function (fn) {
 }
 
 //?????????
-Array.prototype.mySort = function () {
+Array.prototype.mySort = function (fn) {
 
   let quickSort = function(arr) {
     if (arr.length < 2) return arr;
@@ -25,6 +25,7 @@ Array.prototype.mySort = function () {
     let right = [];
 
     for (let element of arr) {
+      fn(element, pivot);
       if (element > pivot) right.push(element);
       else if (element < pivot) left.push(element);
       else equal.push(element);
@@ -38,7 +39,7 @@ Array.prototype.mySort = function () {
 }
 
 let arr3 = [2,5,3,6,1,4];
-console.log(arr3.mySort());
+console.log(arr3.mySort((a,b)=>console.log(a + " <> " + b)));
 
 //myForEach
 let arr = [1,2,3,4,5];
