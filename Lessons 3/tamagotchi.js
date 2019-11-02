@@ -146,30 +146,30 @@ class Tamagotchi {
 
   hungerDrain()
   {
-    this._foodLevel-=4;
+     this._foodLevel-=4;
   }
 
   waterDrain()
   {
-    this._waterLevel-=3;
+     this._waterLevel-=3;
   }
 
   sleepDrain()
   {
-	this._sleepLevel-=2;
+	   this._sleepLevel-=2;
   }
 
   playDrain()
   {
-	this._happinessLevel-=3;
+	   this._happinessLevel-=3;
   }
 }
 
 let tamagotchi = new Tamagotchi("Desti");
 let intervalID;
 let statHolder = document.getElementById("stats"),
-	infoHolder = document.getElementById("info"),
-	warningHolder = document.getElementById("warn");
+	  infoHolder = document.getElementById("info"),
+	  warningHolder = document.getElementById("warn");
 
 infoHolder.innerHTML = "Our new baby " + tamagotchi.getName() + " was born!";
 statHolder.innerHTML = tamagotchi.showStats();
@@ -178,11 +178,11 @@ tamagotchi.setDifficulty(1500);
 
 intervalID = setInterval(function () {
   if(!tamagotchi.isDead() && !tamagotchi.isRanAway()) {
-	statHolder.innerHTML = tamagotchi.showStats();
+  	statHolder.innerHTML = tamagotchi.showStats();
     tamagotchi.hungerDrain();
-	tamagotchi.waterDrain();
-	tamagotchi.sleepDrain();
-	tamagotchi.playDrain();
+  	tamagotchi.waterDrain();
+  	tamagotchi.sleepDrain();
+  	tamagotchi.playDrain();
     if (tamagotchi.foodLevelWarning())
       warningHolder.innerHTML = "Feed me!";
     else if (tamagotchi.waterLevelWarning())
@@ -191,14 +191,14 @@ intervalID = setInterval(function () {
       warningHolder.innerHTML = "I need rest!";
     else if (tamagotchi.happinessLevelWarning())
       warningHolder.innerHTML = "I want to play!";
-	else
-		warningHolder.innerHTML = "";
+  	else
+  		warningHolder.innerHTML = "";
   } else {
-	statHolder.innerHTML = tamagotchi.showStats();
+	   statHolder.innerHTML = tamagotchi.showStats();
     if (tamagotchi.getIsDead())
       warningHolder.innerHTML = tamagotchi.getName() + " has died.";
     else
-warningHolder.innerHTML = tamagotchi.getName() + " ran away.";
+      warningHolder.innerHTML = tamagotchi.getName() + " ran away.";
     clearInterval(intervalID);
   }
 }, tamagotchi.getDifficulty());
