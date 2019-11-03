@@ -13,7 +13,7 @@ Array.prototype.myMap = function (fn) {
 }
 
 //?????????
-Array.prototype.mySort = function (fn) {
+Array.prototype.mySort = function (fn = (a,b) => {return a > b}) {
 
   let quickSort = function(arr) {
     if (arr.length < 2) return arr;
