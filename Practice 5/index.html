@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function openbox(id) {
+        var all = document.querySelectorAll(".text-block");
+        for (var i = 0; i < all.length; i++) {
+          if (all[i].id == id) {
+            all[i].style.opacity = (all[i].style.opacity === '0') ? '1': '0';
+          } else {
+            all[i].style.opacity = '0';
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <ul id="menu">
+        <li><a href="#" onclick="openbox('menu1'); return false;">Меню 1</a></li>
+        <li><a href="#" onclick="openbox('menu2'); return false;">Меню 2</a></li>
+        <li><a href="#" onclick="openbox('menu3'); return false;">Меню 3</a></li>
+        <li><a href="#" onclick="openbox('menu4'); return false;">Меню 4</a></li>
+        <li><a href="#" onclick="openbox('menu5'); return false;">Меню 5</a></li>
+      </ul>
+      <div id="content">
+        <div class="text-block" id="menu1" style="opacity: 1">
+          <p>Menu 1 data here</p>
+        </div>
+        <div class="text-block" id="menu2" style="opacity: 0">
+          <p>Menu 2 data here</p>
+        </div>
+        <div class="text-block" id="menu3" style="opacity: 0">
+          <p>Menu 3 data here</p>
+        </div>
+        <div class="text-block" id="menu4" style="opacity: 0">
+          <p>Menu 4 data here</p>
+        </div>
+        <div class="text-block" id="menu5" style="opacity: 0">
+          <p>Menu 5 data here</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
