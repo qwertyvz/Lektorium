@@ -1,0 +1,10 @@
+.search input{
+      height: 35px;
+      width: 288px;
+      background-color: wheat;
+      border: 1px solid #d8d8d8;
+      padding-left: 10px;
+      color: #4162f6;
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 20px;
+}
