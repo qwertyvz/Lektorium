@@ -1,0 +1,22 @@
+{
+  "name": "carousel",
+  "version": "1.0.0",
+  "description": "infinity carousel",
+  "main": "main.js",
+  "scripts": {
+    "test": "none",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Qwertyvz",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
