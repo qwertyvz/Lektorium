@@ -1,10 +1,10 @@
 function perform(param, f) {
-  let p1 = new Promise((resolve) => {resolve(f(param))});
-  return p1.then((param) => {console.log(++param); return param;});
+  let p1 = new Promise(resolve => resolve(f(param)));
+  return p1.then(param => {
+    console.log(++param);
+    return param;
+  });
 }
-
-
-
 
 perform(20, function(value) {
   console.log(value) // 20
