@@ -1,6 +1,10 @@
-/*function perform(val, f) {
-  return new Promise((resolve, reject) => {resolve(f(val))})
+function perform(param, f) {
+  let p1 = new Promise((resolve) => {resolve(f(param))});
+  return p1.then((param) => {console.log(++param); return param;});
 }
+
+
+
 
 perform(20, function(value) {
   console.log(value) // 20
@@ -15,8 +19,8 @@ perform(20, function(value) {
 .then(function(param) { // param === 2
   console.log(++param); // 3
   return param;
-});*/
-
+});
+/*
 let isTestPassed = true;
 
 let willIContinueStuding = new Promise((resolve, reject) => {
@@ -46,4 +50,4 @@ function askMentor() {
 
 
 
-askMentor();
+askMentor();*/
