@@ -6,7 +6,6 @@ import update from 'immutability-helper';
 export default class MyContentComponent extends Component {
     constructor(props) {
         super(props);
-        console.log('props', props);
         this.state = {
             items: [
                 {
@@ -128,7 +127,7 @@ export default class MyContentComponent extends Component {
         let deleteID = e.target.value;        
         let indexToRemove = this.state.items.findIndex((item) => item.id === +deleteID);
         let newItems = update(this.state.items, { $splice: [[indexToRemove, 1]] });
-        this.setState({items: newItems})
+        this.setState({ items: newItems })
         
     }
 
@@ -142,9 +141,9 @@ export default class MyContentComponent extends Component {
         let editID = e.target.value;
         let index = this.state.items.findIndex((item) => item.id === +editID);
         let newState = update(this.state.items, {
-            [index]: {editing: {$set: true}}
+            [index]: { editing: { $set: true } }
         });
-        this.setState({items: newState});
+        this.setState({ items: newState });
     }
 
     renderSaveButton(id) {
@@ -158,10 +157,10 @@ export default class MyContentComponent extends Component {
         let index = this.state.items.findIndex((item) => item.id === +editID);
         let newState = update(this.state.items, {
             [index]: { 
-                name: {$set: this.name.value},
-                amount: {$set: this.amount.value},
-                price: {$set: this.price.value},
-                isSoldOut: {$set: this.amount.value > 0 ? false : true},
+                name: { $set: this.name.value },
+                amount: { $set: this.amount.value },
+                price: { $set: this.price.value },
+                isSoldOut: { $set: this.amount.value > 0 ? false : true },
                 editing: { $set: false },   
              }
         });
@@ -175,7 +174,7 @@ export default class MyContentComponent extends Component {
     }
 
     handleAddItemButton() {
-        let newItem = update(this.state.items, {$push: [{
+        let newItem = update(this.state.items, { $push: [{
             id: this.state.items.length !== 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1,
             name: 'IPhone XS Max New',
             amount: 25,
@@ -183,7 +182,7 @@ export default class MyContentComponent extends Component {
             isSoldOut: false,
             editing: false
         }]});
-        this.setState({items: newItem});
+        this.setState({ items: newItem });
     }
 
     renderLoginButton() {
@@ -193,7 +192,7 @@ export default class MyContentComponent extends Component {
     }
 
     handleLoginButton() {
-        this.setState({isAdmin: true})
+        this.setState({ isAdmin: true })
     }
 
     render() {
