@@ -168,6 +168,12 @@ export default class MyContentComponent extends Component {
         this.setState({ items: newState });
     }
 
+    renderAddItemButton() {
+        return (
+            <button onClick={this.handleAddItemButton} className="add-btn">+ Add Item</button>
+        )
+    }
+
     handleAddItemButton() {
         let newItem = update(this.state.items, {$push: [{
             id: this.state.items.length !== 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1,
@@ -178,12 +184,6 @@ export default class MyContentComponent extends Component {
             editing: false
         }]});
         this.setState({items: newItem});
-    }
-
-    renderAddItemButton() {
-        return (
-            <button onClick={this.handleAddItemButton} className="add-btn">+ Add Item</button>
-        )
     }
 
     renderLoginButton() {
