@@ -119,16 +119,11 @@ label {
 .btn:disabled {
   background: #c4c4c4;
 }
-
-.panel {
-    width: 100%;
-    .formErrors p {
-        background: #f5060685;
-        padding: 3px;
-        border-radius: 3px;
-        color: #fff;
-        font-weight: 600;
-        margin: 8px 0;    
-    }
+.formErrors {
+    background: #f5060691;
+    padding: 3px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;  
+    margin: 3px 0 0;
 }
-
