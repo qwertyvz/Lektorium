@@ -19,6 +19,17 @@
     background-color: #006e30;
 }
 
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #adadad;
+}
+
+
 #grid {
     display: flex;
     flex-flow: row wrap;
@@ -120,5 +131,9 @@
         margin-top: 6px;
         position: absolute;
         top: 45px;
+    }
+
+    .edit-input {
+
     }
 }

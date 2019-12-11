@@ -208,9 +208,9 @@ export default class MyContentComponent extends Component {
                                 {this.state.isAdmin && this.renderDeleteItemButton(item.id)}
                                 {this.state.isAdmin && this.renderEditItemButton(item.id)}
                                 <img src={iphoneImg} alt={item.name} />
-                                {item.editing ? <input type="text" name="name" defaultValue={item.name} ref={input => this.name = input}/> : <p className="item-name">{item.name}</p>}
-                                {item.editing ? <input type="text" name="price" defaultValue={item.price} ref={input => this.price = input}/> : <span className="item-price">{item.price} ₴</span>}
-                                {!item.editing && item.isSoldOut ? <span className="item-soldout">Sold Out!</span> : item.editing ? <input type="text" name="amount" defaultValue={item.amount} ref={input => this.amount = input}/> :<span className="item-amount">Left amout: {item.amount}</span>}
+                                {item.editing ? <input className="edit-input" type="text" name="name" defaultValue={item.name} ref={input => this.name = input}/> : <p className="item-name">{item.name}</p>}
+                                {item.editing ? <input className="edit-input" type="text" name="price" defaultValue={item.price} ref={input => this.price = input}/> : <span className="item-price">{item.price} ₴</span>}
+                                {!item.editing && item.isSoldOut ? <span className="item-soldout">Sold Out!</span> : item.editing ? <input className="edit-input" type="text" name="amount" defaultValue={item.amount} ref={input => this.amount = input}/> :<span className="item-amount">Left amout: {item.amount}</span>}
                                 {!item.editing && item.isSoldOut && <div className="soldout"></div>}
                                 {!item.isSoldOut && !item.editing && this.renderBuyButton(item.id)}
                                 {item.editing && this.renderSaveButton(item.id)}
