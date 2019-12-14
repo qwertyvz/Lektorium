@@ -47,68 +47,54 @@ export default class MyFormSimple extends React.Component {
         let { usernameValid, emailValid, passwordValid,  confirmPasswordValid, phoneValid } = this.state
         switch (fieldName) {
             case 'username':
-                usernameValid = true;
-                if (value.length === 0) {
+                if (value.length === 0 || value.length < 3) {
                     usernameValid = false
-                    errorText = ' required'
-                } else if (value.length < 3) {
-                    usernameValid = false
-                    errorText = ' is to short use at least 3 symbols'
-                }
-                //usernameValid = value.length >= 3
-                //fieldValidationErrors.username = usernameValid ? '' : ' is too short'
+                    value.length === 0 ? errorText = ' required' : errorText = ' is to short use at least 3 symbols'
+                } else {
+                    usernameValid = true
+                    errorText = ''
+                } 
                 fieldValidationErrors.username = usernameValid ? '' : errorText
                 break;
             case 'email':
-                emailValid = true;
-                if (value.length === 0) {
+                if (value.length === 0 || !/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(value)) {
                     emailValid = false
-                    errorText = ' required'
-                } else if (!/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(value)) {
-                    emailValid = false
-                    errorText = ' is invalid'
+                    value.length === 0 ? errorText = ' required' : errorText = ' is invalid'
+                } else {
+                    emailValid = true
+                    errorText = ''
                 }
-                //emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) && true
-                //fieldValidationErrors.email = emailValid ? '' : ' is invalid'
                 fieldValidationErrors.email = emailValid ? '' : errorText
                 break;
             case 'password':
-                passwordValid = true
-                if (value.length === 0) {
+                if (value.length === 0 || value.length < 6) {
                     passwordValid = false
-                    errorText = ' required'
-                } else if (value.length < 6) {
-                    passwordValid = false
-                    errorText = ' is to short use at least 6 symbols'
+                    value.length === 0 ? errorText = ' required' : errorText = ' is to short use at least 6 symbols'
+                } else {
+                    passwordValid = true
+                    errorText = ''
                 }
-                //passwordValid = value.length >= 6;
-                //fieldValidationErrors.password = passwordValid ? '' : ' is too short'
                 fieldValidationErrors.password = passwordValid ? '' : errorText
                 break;
             case 'confirmPassword':
-                confirmPasswordValid = true
-                if (value.length === 0) {
+                if (value.length === 0 || this.state.password !== this.state.confirmPassword) {
                     confirmPasswordValid = false
-                    errorText = ' required'
-                } else if (this.state.password !== this.state.confirmPassword) {
-                    confirmPasswordValid = false
-                    errorText = ' is not equal'
+                    value.length === 0 ? errorText = ' required' : errorText = ' is not equal'
+                } else {
+                    confirmPasswordValid = true
+                    errorText = ''
                 }
-                //confirmPasswordValid = this.state.password === this.state.confirmPassword
-                //fieldValidationErrors.confirmPassword = confirmPasswordValid ? '' : ' is not equal'
                 fieldValidationErrors.confirmPassword = confirmPasswordValid ? '' : errorText
                 break;
             case 'phone':
                 phoneValid = true;
-                if (value.length === 0) {
+                if (value.length === 0 || !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(value)) {
                     phoneValid = false
-                    errorText = ' required'
-                } else if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(value)) {
-                    phoneValid = false
-                    errorText = ' is invalid'
+                    value.length === 0 ? errorText = ' required' : errorText = ' is invalid'
+                } else {
+                    phoneValid = true
+                    errorText = ''
                 }
-                //phoneValid = value.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im) && true
-                //fieldValidationErrors.phone = phoneValid ? '' : 'is invalid'
                 fieldValidationErrors.phone = phoneValid ? '' : errorText
                 break;
             default:
