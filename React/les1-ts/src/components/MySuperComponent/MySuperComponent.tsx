@@ -134,7 +134,7 @@ const MySuperComponent: React.FC  = () => {
         )
     }
 
-    const handleEditItemButton = (e: React.MouseEvent<HTMLButtonElement>): void=> {
+    const handleEditItemButton = (e: React.MouseEvent<HTMLButtonElement>): void => {
         let editID: number = +e.currentTarget.value
         let index: number = items.findIndex((item) => item.id === +editID)
         let newState: IItem[] = update(items, {
@@ -186,7 +186,7 @@ const MySuperComponent: React.FC  = () => {
         )
     }
 
-    const handleAddItemButton = () => {
+    const handleAddItemButton = (): void => {
         let newItem: IItem[] = update(items, {
             $push: [{
                 id: items.length !== 0 ? items[items.length - 1].id + 1 : 1,
@@ -206,7 +206,7 @@ const MySuperComponent: React.FC  = () => {
         )
     }
 
-    const handleLoginButton = () => {
+    const handleLoginButton = (): void => {
         setIsAdmin(true)
     }
 
