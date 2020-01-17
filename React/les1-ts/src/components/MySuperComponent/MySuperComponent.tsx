@@ -13,7 +13,7 @@ interface IItem {
 }
 
 const MySuperComponent: React.FC  = () => {
-    let itemsObj = [
+    let itemsObj: IItem[] = [
         {
             id: 1,
             name: 'IPhone X 64Gb Silver',
