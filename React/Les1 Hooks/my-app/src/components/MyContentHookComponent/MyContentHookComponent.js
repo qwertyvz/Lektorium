@@ -90,8 +90,7 @@ export default function MyContentHookComponent() {
         // receiving data from ajax request
         // and set the state as the example object provided earlier
         setItems(itemsObj)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [itemsObj])
 
     const renderBuyButton = (id) => {
         return (
