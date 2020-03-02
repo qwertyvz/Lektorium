@@ -1,0 +1,139 @@
+.add-btn {
+    position: absolute;
+    right: 28px;
+    top: 28px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #00a046;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.add-btn:hover{
+    opacity: .9;
+}
+
+.add-btn:active {
+    background-color: #006e30;
+}
+
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  font-size: 14px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #adadad;
+}
+
+
+#grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    color: #333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+
+    .item {
+        border: 1px solid #e3e3e3;
+        flex-grow: 1;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        transition: box-shadow .3s linear;
+    }
+
+    .item:hover {
+        box-shadow: 0 0 15px 0 rgba(50,50,50,.15);
+        z-index: 4;
+    }
+
+    .item-price {
+        font-weight: 600;
+        font-size: 24px;
+        align-self: flex-start;
+    }
+    .item-amount {
+        margin-top: 3px;
+        color: #009f00;
+        align-self: flex-start;
+    }   
+
+    .item-soldout {
+        margin-top: 3px;
+        color: red;
+        align-self: flex-start;
+    }
+
+    .soldout {
+        position: absolute;
+        background-color: #dbdbdb8c;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .buy-btn {
+        align-self: flex-end;
+        margin-top: -40px;
+        width: 100px;
+        height: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #00a046;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .buy-btn:hover, .delete-item-btn:hover, .edit-item-bt:hover {
+        opacity: .9;
+    }
+
+    .delete-item-btn:active {
+        background-color: #9e3a37;
+    }
+
+    .buy-btn:active {
+        background-color: #006e30;
+    }
+
+    .delete-item-btn {
+        background-color: #d95652;
+        border-radius: 100%;
+        padding: 6px 9px;
+        align-self: flex-end;
+        cursor: pointer;
+        z-index: 1;
+        color: #fff;
+        font-weight: 900;
+        border: none;
+        position: absolute;
+        top: 18px;
+    }
+
+    .edit-item-btn {
+        background-color: #685384;
+        border-radius: 100%;
+        padding: 6px 9px;
+        align-self: flex-end;
+        cursor: pointer;
+        z-index: 1;
+        color: #fff;
+        font-weight: 900;
+        border: none;
+        margin-top: 6px;
+        position: absolute;
+        top: 45px;
+    }
+
+    .edit-input {
+
+    }
+}
